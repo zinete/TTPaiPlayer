@@ -18,6 +18,7 @@ module.exports = {
     'import/no-unresolved': 'off', // 允许require image
     'react/no-multi-comp': 'off', // 允许一个文件定义多个组件
     'react/display-name': 'off', // 不需要给组件定义displayName
+    'react-native/no-inline-styles': 0,
   },
   settings: {
     'import/ignore': ['node_modules'],
