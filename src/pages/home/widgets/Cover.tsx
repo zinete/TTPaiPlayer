@@ -2,32 +2,37 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 15:41:07
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-27 18:54:40
+ * @ Modified time: 2021-08-30 15:25:46
  * @ Description:
  */
 
 import React from 'react';
+import SoundPlayer from 'react-native-sound-player';
 import styled from 'styled-components/native';
+import Touchable from '../../../components/Touchable';
 
 type coverPropsType = {
   url: string;
   title: string;
   des: string;
+  goDetail: () => void;
 };
 export const Cover: React.FC<coverPropsType> = (props: any) => {
   return (
-    <CoverMain>
-      <Card>
-        <CoverImage />
-        <DesBox>
-          <Title>{props.title}</Title>
-          <Des>{props.des}</Des>
-        </DesBox>
-        <Play>
-          <PlayText>play</PlayText>
-        </Play>
-      </Card>
-    </CoverMain>
+    <Touchable onPress={props.goDetail}>
+      <CoverMain>
+        <Card>
+          <CoverImage />
+          <DesBox>
+            <Title>{props.title}</Title>
+            <Des>{props.des}</Des>
+          </DesBox>
+          <Play onPress={() => SoundPlayer.playUrl(props.url)}>
+            <PlayText>play</PlayText>
+          </Play>
+        </Card>
+      </CoverMain>
+    </Touchable>
   );
 };
 

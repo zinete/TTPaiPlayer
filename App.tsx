@@ -8,8 +8,8 @@
  * @format
  */
 import React from 'react';
-import HomePage from './src/pages/home';
+import Root from './src/Root';
 
-const App = () => <HomePage />;
+const App = () => <Root />;
 
 export default App;

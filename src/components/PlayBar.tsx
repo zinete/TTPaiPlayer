@@ -2,12 +2,11 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 16:32:13
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-27 18:49:52
+ * @ Modified time: 2021-08-30 14:13:18
  * @ Description:
  */
 
 import React from 'react';
-import {ImageSourcePropType} from 'react-native';
 import styled from 'styled-components/native';
 import Touchable from './Touchable';
 type playBarProps = {

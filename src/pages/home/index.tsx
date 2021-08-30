@@ -2,7 +2,7 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-25 18:57:28
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-27 18:59:22
+ * @ Modified time: 2021-08-30 15:55:30
  * @ Description:
  */
 
@@ -13,7 +13,10 @@ import Main from '../../components/Main';
 import {PlayBar} from '../../components/PlayBar';
 import {Cover} from './widgets/Cover';
 import SoundPlayer from 'react-native-sound-player';
-
+import musics from '../../data/music';
+import {PageStackParamList, ProfileScreenNavigationProp} from '../../routers';
+import {RouteProp} from '@react-navigation/native';
+import {inject, observer} from 'mobx-react';
 async function getInfo() {
   // You need the keyword `async`
   try {
@@ -30,7 +33,14 @@ const ModelView = (top: any, hidePlay: () => void) => (
   </PlayModelViewAnimated>
 );
 
-const HomePage = () => {
+interface IProps {
+  navigation: ProfileScreenNavigationProp;
+  route: RouteProp<PageStackParamList, 'MusicDetail'>;
+  MusicStore: any;
+}
+
+const HomePage = (props: IProps) => {
+  // const {playStatus, hidePlayer, showPlayer} = props.MusicStore.music;
   const [top] = React.useState(new Animated.Value(1000));
 
   const showPlay = () => {
@@ -50,32 +60,26 @@ const HomePage = () => {
 
   React.useEffect(() => {
     try {
-      SoundPlayer.loadUrl(
-        'https://static.zinete.com/%E5%91%A8%E6%9D%B0%E4%BC%A6%3B%E8%94%A1%E4%BE%9D%E6%9E%97%20-%20%E7%BB%99%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%97%B6%E9%97%B4%28live%29.mp3',
-      );
-      SoundPlayer.addEventListener('FinishedLoadingURL', s => {
-        console.log(s);
-      });
+      // SoundPlayer.loadUrl(
+      //   'https://static.zinete.com/%E5%91%A8%E6%9D%B0%E4%BC%A6%3B%E8%94%A1%E4%BE%9D%E6%9E%97%20-%20%E7%BB%99%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%97%B6%E9%97%B4%28live%29.mp3',
+      // );
+      // SoundPlayer.addEventListener('FinishedLoadingURL', s => {
+      //   console.log(s);
+      // });
+      console.log(props.MusicStore.music, 'props');
     } catch (error) {}
     StatusBar.setBarStyle('light-content');
-  }, []);
+  }, [props]);
 
-  const MusicList = [
-    {
-      title: '不能说的秘密',
-      des: '十一月的肖邦',
-      cover: '',
-      url: 'https://static.zinete.com/%E5%91%A8%E6%9D%B0%E4%BC%A6%3B%E8%94%A1%E4%BE%9D%E6%9E%97%20-%20%E7%BB%99%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%97%B6%E9%97%B4%28live%29.mp3',
-    },
-  ];
   return (
     <>
       {ModelView(top, hidePlay)}
       <Main>
         <Home>
           <ScrollView>
-            {MusicList.map((item, index) => (
+            {musics.map((item, index) => (
               <Cover
+                goDetail={() => props.navigation.push('MusicDetail')}
                 key={index}
                 title={item.title}
                 des={item.des}
@@ -128,4 +132,5 @@ const ClosePlay = styled.TouchableOpacity`
   background: #fff;
 `;
 const PlayModelViewAnimated = Animated.createAnimatedComponent(PlayModelView);
-export default HomePage;
+
+export default inject('MusicStore')(observer(HomePage));
