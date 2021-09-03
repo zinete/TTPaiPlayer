@@ -2,7 +2,7 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 16:32:13
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-30 14:13:18
+ * @ Modified time: 2021-09-03 11:02:29
  * @ Description:
  */
 
@@ -12,6 +12,11 @@ import Touchable from './Touchable';
 type playBarProps = {
   onPress?: () => void;
   checkMusic?: (e: boolean) => void;
+  url: String;
+  title: String;
+  artist: String;
+  artwork: String;
+  duration: Number;
 };
 
 const PlayMusicState = (
@@ -27,8 +32,6 @@ const PlayMusicState = (
 
 export const PlayBar: React.FC<playBarProps> = props => {
   const [playStatus, setPlaystatus] = React.useState(false);
-  let songImage =
-    'https://img1.baidu.com/it/u=2640321207,3507795662&fm=26&fmt=auto&gp=0.jpg';
 
   let playTextstatus = playStatus ? '播放' : '暂停';
   return (
@@ -36,13 +39,13 @@ export const PlayBar: React.FC<playBarProps> = props => {
       <Touchable onPress={props.onPress}>
         <PlayCover
           source={{
-            url: songImage,
+            url: props.artwork,
           }}
         />
       </Touchable>
       <PlayMusic>
-        <MusicTitle>晴天</MusicTitle>
-        <MusicDes>刮风这天我试过握着你手</MusicDes>
+        <MusicTitle>{props.title}</MusicTitle>
+        <MusicDes>{props.artist}</MusicDes>
       </PlayMusic>
       <PlayIcon
         activeOpacity={0.8}

@@ -2,7 +2,7 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 15:41:07
  * @ Modified by: zhenghui
- * @ Modified time: 2021-09-02 16:23:24
+ * @ Modified time: 2021-09-03 16:05:51
  * @ Description:
  */
 
@@ -15,6 +15,8 @@ type coverPropsType = {
   url: string;
   title: string;
   des: string;
+  cover: string;
+  play: () => void;
   goDetail: () => void;
 };
 export const Cover: React.FC<coverPropsType> = (props: any) => {
@@ -22,13 +24,13 @@ export const Cover: React.FC<coverPropsType> = (props: any) => {
     <CoverMain>
       <Card>
         <Touchable onPress={props.goDetail}>
-          <CoverImage />
+          <CoverImage source={{uri: props.cover}} />
         </Touchable>
         <DesBox>
           <Title>{props.title}</Title>
           <Des numberOfLines={2}>{props.des}</Des>
         </DesBox>
-        <Play onPress={() => null}>
+        <Play onPress={props.play}>
           <PlayText>play</PlayText>
         </Play>
       </Card>
@@ -51,7 +53,7 @@ const Des = styled.Text`
   width: 200px;
 `;
 
-const CoverImage = styled.View`
+const CoverImage = styled.Image`
   width: 60px;
   height: 100%;
   background: #fff;
