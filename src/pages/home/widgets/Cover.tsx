@@ -2,12 +2,12 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 15:41:07
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-30 15:25:46
+ * @ Modified time: 2021-09-02 16:23:24
  * @ Description:
  */
 
 import React from 'react';
-import SoundPlayer from 'react-native-sound-player';
+
 import styled from 'styled-components/native';
 import Touchable from '../../../components/Touchable';
 
@@ -19,20 +19,20 @@ type coverPropsType = {
 };
 export const Cover: React.FC<coverPropsType> = (props: any) => {
   return (
-    <Touchable onPress={props.goDetail}>
-      <CoverMain>
-        <Card>
+    <CoverMain>
+      <Card>
+        <Touchable onPress={props.goDetail}>
           <CoverImage />
-          <DesBox>
-            <Title>{props.title}</Title>
-            <Des>{props.des}</Des>
-          </DesBox>
-          <Play onPress={() => SoundPlayer.playUrl(props.url)}>
-            <PlayText>play</PlayText>
-          </Play>
-        </Card>
-      </CoverMain>
-    </Touchable>
+        </Touchable>
+        <DesBox>
+          <Title>{props.title}</Title>
+          <Des numberOfLines={2}>{props.des}</Des>
+        </DesBox>
+        <Play onPress={() => null}>
+          <PlayText>play</PlayText>
+        </Play>
+      </Card>
+    </CoverMain>
   );
 };
 
@@ -48,6 +48,7 @@ const Des = styled.Text`
   color: #fff;
   font-size: 14px;
   font-weight: 500;
+  width: 200px;
 `;
 
 const CoverImage = styled.View`

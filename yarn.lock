@@ -1021,6 +1021,13 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@react-native-community/blur@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/blur/-/blur-3.6.0.tgz#31c9e0f2770519c9b5c4f99418f192246f0d4db8"
+  integrity sha512-GtDBhpX2pQcjl4VopOC8FktrVufrEfYRwVeMQ2WWckqKIv2BdwvlvWvj88L1WmEdBr9UNcm3rtgz+d+YXkmirA==
+  dependencies:
+    prop-types "^15.5.10"
+
 "@react-native-community/cli-debugger-ui@^6.0.0-rc.0":
   version "6.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-6.0.0-rc.0.tgz#774378626e4b70f5e1e2e54910472dcbaffa1536"
@@ -1358,6 +1365,11 @@
   version "4.14.172"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
   integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
+
+"@types/lyric-parser@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/lyric-parser/-/lyric-parser-1.0.2.tgz#584c624404fc30bfcd8327ad8264e43c34a2f2d8"
+  integrity sha512-DuAhlOymYhNDFU6qxhIxxcmOZC72fMDfu0n9nEm8fBaHY2a2n7VypjI0KrT9WB/ip5rlTMI2e7MI5yablLnAxQ==
 
 "@types/node@*":
   version "16.7.1"
@@ -4459,6 +4471,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+lyric-parser@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/lyric-parser/-/lyric-parser-1.0.1.tgz#a1f8aa77653cf947ecf94df51d5f816afc9ed44c"
+  integrity sha1-ofiqd2U8+Ufs+U31HV+Bavye1Ew=
+
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
@@ -5399,7 +5416,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5480,10 +5497,10 @@ react-native-screens@^3.6.0:
   dependencies:
     warn-once "^0.1.0"
 
-react-native-sound-player@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/react-native-sound-player/-/react-native-sound-player-0.11.1.tgz#5df2b017c1574fe77f164c1248b24ebe1920f2ad"
-  integrity sha512-hXf0qrVWzNniYo0BWvjloGKQIi0tc81H4FghxnPmyAVG6WWx+zq3k9twrOc6Ced8b6AdxCzmJfmjb4RZH0Y+Tg==
+react-native-track-player@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-2.0.3.tgz#a2648e2468f8502359b4678655573501d46f0c64"
+  integrity sha512-XV+92szbnf4FcByzfT62fN+iT9o0WhoMgDFl63Jf4gk6vw6VOFchPOoHKHW0XqgnO4vIit8CFc8u945l8vSSuQ==
 
 react-native@0.65.1:
   version "0.65.1"
