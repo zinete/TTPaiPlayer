@@ -2,7 +2,7 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-27 15:31:31
  * @ Modified by: zhenghui
- * @ Modified time: 2021-08-27 17:12:04
+ * @ Modified time: 2021-10-12 17:05:48
  * @ Description: 主体包裹 左右间距 背景颜色
  */
 
@@ -20,7 +20,6 @@ const Main: React.FC<mainpropsType> = props => {
 };
 
 const Body = styled.SafeAreaView`
-  background: #191919;
   flex: 1;
   height: 100%;
   position: relative;

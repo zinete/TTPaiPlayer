@@ -2,7 +2,7 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-25 18:57:28
  * @ Modified by: zhenghui
- * @ Modified time: 2021-09-03 18:16:47
+ * @ Modified time: 2021-10-13 17:04:23
  * @ Description:
  */
 
@@ -251,7 +251,7 @@ interface IProps {
 
 const HomePage = (props: IProps) => {
   // const {playStatus, hidePlayer, showPlayer} = props.MusicStore.music;
-  const [top] = React.useState(new Animated.Value(0));
+  const [top] = React.useState(new Animated.Value(1000));
   const playbackState = usePlaybackState();
   const showPlay = () => {
     Animated.timing(top, {

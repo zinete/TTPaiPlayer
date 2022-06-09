@@ -2,20 +2,18 @@
  * @ Author: zhenghui
  * @ Create Time: 2021-08-26 17:50:37
  * @ Modified by: zhenghui
- * @ Modified time: 2021-10-12 16:52:52
+ * @ Modified time: 2021-10-12 16:53:35
  * @ Description:
  */
 
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {Text, SafeAreaView} from 'react-native';
 
-const MePage = () => {
+const SubPage = () => {
   return (
     <SafeAreaView>
-      <View>
-        <Text>MePage</Text>
-      </View>
+      <Text>SubPage</Text>
     </SafeAreaView>
   );
 };
-export default MePage;
+export default SubPage;
